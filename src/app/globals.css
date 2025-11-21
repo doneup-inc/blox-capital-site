@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background: #030712;
+  --foreground: #f8fbff;
+  --muted-foreground: rgba(226, 232, 240, 0.78);
+  --accent-primary: 40 58% 62%;
+  --accent-secondary: 186 52% 60%;
+  --accent-tertiary: 258 45% 72%;
+  --surface: rgba(9, 13, 26, 0.68);
+  --surface-alt: rgba(15, 20, 34, 0.85);
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --shadow-soft: 0 25px 70px -45px rgba(0, 0, 0, 0.7);
+  --hero-shadow: 0 45px 140px -80px rgba(214, 182, 118, 0.55);
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+body {
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid hsl(var(--accent-secondary));
+  outline-offset: 4px;
+}
+
+.glass-panel {
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.section-container {
+  font-size: clamp(1.1rem, 0.75rem + 0.75vw, 1.4rem);
+  color: var(--muted-foreground);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: clamp(1.5rem, 4vw, 3rem);
+  padding-right: clamp(1.5rem, 4vw, 3rem);
+}
+
+.mono-label {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: rgba(170, 183, 208, 0.82);
+  margin-top: 0.55rem !important;
+  margin-bottom: 0.35rem;
+}
+
+.mono-label:first-child {
+  margin-top: 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-strong);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.badge--primary {
+  border-color: hsla(var(--accent-primary), 0.45);
+  background: hsla(var(--accent-primary), 0.16);
+  color: hsl(var(--accent-primary));
+}
+
+.badge--secondary {
+  border-color: hsla(var(--accent-secondary), 0.4);
+  background: hsla(var(--accent-secondary), 0.14);
+  color: hsl(var(--accent-secondary));
+}
+
+.badge--tertiary {
+  border-color: hsla(var(--accent-tertiary), 0.4);
+  background: hsla(var(--accent-tertiary), 0.14);
+  color: hsl(var(--accent-tertiary));
+}
+
+.cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 999px;
+  padding: 0.85rem 1.65rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.05;
+  background: linear-gradient(135deg, hsla(var(--accent-primary), 0.95), hsla(var(--accent-secondary), 0.8));
+  color: #0a0d16;
+  box-shadow: 0 12px 28px -26px rgba(214, 182, 118, 0.45), 0 0 0 1px rgba(214, 182, 118, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-primary:hover {
+  transform: translateY(-0.15rem);
+  box-shadow: 0 25px 55px -25px rgba(214, 182, 118, 0.75);
+}
+
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid hsla(var(--accent-primary), 0.35);
+  background: rgba(255, 255, 255, 0.04);
+  color: hsl(var(--accent-primary));
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.cta-secondary:hover {
+  border-color: hsla(var(--accent-secondary), 0.5);
+  color: hsl(var(--accent-secondary));
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.link-accent {
+  color: hsl(var(--accent-secondary));
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.link-accent:hover {
+  color: hsl(var(--accent-primary));
+}
+
+.underline-accent {
+  text-decoration-color: hsla(var(--accent-primary), 0.6);
+}
+
+.underline-accent:hover {
+  text-decoration-color: hsla(var(--accent-secondary), 0.75);
+}
+
+.accent-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+}
+
+.accent-dot--primary {
+  background: hsl(var(--accent-primary));
+}
+
+.accent-dot--secondary {
+  background: hsl(var(--accent-secondary));
+}
+
+.accent-dot--tertiary {
+  background: hsl(var(--accent-tertiary));
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.logo-wordmark {
+  width: clamp(210px, 25vw, 330px);
+  max-width: 100%;
+  height: auto;
+  filter: brightness(1.12) drop-shadow(0 12px 32px rgba(0, 0, 0, 0.45));
+}
+
+.logo-emblem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 18px 48px -28px rgba(0, 0, 0, 0.7);
+}
+
+.logo-emblem-image {
+  width: clamp(54px, 5.5vw, 68px);
+  height: auto;
+  filter: brightness(1.08) drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
+}
+
+.hero-shell {
+  box-shadow: var(--hero-shadow);
+  transition: box-shadow 0.35s ease;
+}
