@@ -101,7 +101,6 @@ a {
 }
 
 .cta-primary {
-  display: inline-flex;
   align-items: center;
   gap: 0.65rem;
   border-radius: 999px;
@@ -121,7 +120,6 @@ a {
 }
 
 .cta-secondary {
-  display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   border-radius: 999px;
