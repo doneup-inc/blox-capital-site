@@ -30,7 +30,7 @@ const heroMetrics = [
   {
     label: "Availability",
     value: "24/7",
-    detail: "Operations, reporting, and support stay online",
+    detail: "Operations, reporting, and support stay up around the clock",
   },
 ];
 
