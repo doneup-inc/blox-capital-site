@@ -284,7 +284,7 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <div className="flex flex-col gap-3 sm:max-w-sm">
+            <div className="flex flex-col rpb gap-3 sm:max-w-sm">
               <Link
                 href="mailto:partnerships@blox.capital?subject=Blox%20platform%20walkthrough%20request"
                 className="inline-flex w-full items-center justify-center rounded-full bg-slate-200 px-6 py-3 text-base font-semibold text-black shadow-lg shadow-slate-200/40 transition hover:-translate-y-0.5 hover:bg-slate-100 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-200"

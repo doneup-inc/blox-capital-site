@@ -32,6 +32,10 @@ a {
   color: inherit;
 }
 
+.rpb {
+  color: #000000;
+}
+
 .focus-ring:focus-visible {
   outline: 2px solid hsl(var(--accent-secondary));
   outline-offset: 4px;
