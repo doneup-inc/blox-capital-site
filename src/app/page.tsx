@@ -244,9 +244,10 @@ export default function Home() {
                 </Link>
               ))}
             </nav>
+            {/* Hide on mobile, hero section CTA covers compliance access without crowding */}
             <Link
               href="mailto:compliance@blox.capital?subject=Compliance%20dossier%20access"
-              className="cta-secondary whitespace-nowrap"
+              className="cta-secondary hidden whitespace-nowrap sm:inline-flex"
             >
               Request compliance access
             </Link>
@@ -281,16 +282,16 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="mailto:partnerships@blox.capital?subject=Blox%20platform%20walkthrough%20request"
-                className="cta-primary"
+                className="cta-primary w-full sm:w-auto"
               >
                 Request the platform walkthrough
               </Link>
               <Link
                 href="mailto:compliance@blox.capital?subject=Compliance%20dossier%20access"
-                className="cta-secondary"
+                className="cta-secondary w-full sm:w-auto"
               >
                 Access the compliance dossier
               </Link>
