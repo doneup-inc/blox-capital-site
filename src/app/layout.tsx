@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   title: "Blox Capital — Regulated Commerce Infrastructure",
   description:
     "Blox Capital LLC, a DoneUp, Inc. company, operates the Blox Pay and Blox Wallet platforms with institutional-grade compliance and Omne-powered settlement.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon-192.png",
+    other: [{ rel: "mask-icon", url: "/favicon-512.png" }],
+  },
   openGraph: {
     title: "Blox Capital — Regulated Commerce Infrastructure",
     description:
