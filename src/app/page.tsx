@@ -284,16 +284,16 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="flex flex-col gap-3 sm:max-w-sm">
               <Link
                 href="mailto:partnerships@blox.capital?subject=Blox%20platform%20walkthrough%20request"
-                className="cta-primary flex w-full items-center justify-start text-left sm:w-auto sm:flex-none sm:justify-center sm:text-center"
+                className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-amber-300 via-amber-200 to-sky-200 px-6 py-3 text-base font-semibold text-slate-950 shadow-lg shadow-amber-200/40 transition hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200"
               >
                 Request the platform walkthrough
               </Link>
               <Link
                 href="mailto:compliance@blox.capital?subject=Compliance%20dossier%20access"
-                className="cta-secondary flex w-full items-center justify-start text-left sm:w-auto sm:flex-none sm:justify-center sm:text-center"
+                className="inline-flex w-full items-center justify-center rounded-full border border-sky-300/60 bg-white/5 px-6 py-3 text-base font-medium text-sky-100 transition hover:border-sky-300 hover:bg-white/10 hover:text-sky-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200"
               >
                 Access the compliance dossier
               </Link>
