@@ -248,7 +248,7 @@ export default function Home() {
             <div className="hidden sm:flex">
               <Link
                 href="mailto:compliance@blox.capital?subject=Compliance%20dossier%20access"
-                className="cta-secondary whitespace-nowrap"
+                className="cta-secondary inline-flex items-center whitespace-nowrap"
               >
                 Request compliance access
               </Link>
@@ -284,16 +284,16 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href="mailto:partnerships@blox.capital?subject=Blox%20platform%20walkthrough%20request"
-                className="cta-primary flex w-full justify-center sm:inline-flex sm:w-auto"
+                className="cta-primary flex w-full items-center justify-center sm:w-auto sm:flex-none"
               >
                 Request the platform walkthrough
               </Link>
               <Link
                 href="mailto:compliance@blox.capital?subject=Compliance%20dossier%20access"
-                className="cta-secondary flex w-full justify-center sm:inline-flex sm:w-auto"
+                className="cta-secondary flex w-full items-center justify-center sm:w-auto sm:flex-none"
               >
                 Access the compliance dossier
               </Link>
