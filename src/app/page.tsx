@@ -30,7 +30,7 @@ const heroMetrics = [
   {
     label: "Availability",
     value: "24/7",
-    detail: "Operations, reporting, and support stay online",
+    detail: "Operations, reporting, and support stay up around the clock",
   },
 ];
 
@@ -287,7 +287,7 @@ export default function Home() {
             <div className="flex flex-col gap-3 sm:max-w-sm">
               <Link
                 href="mailto:partnerships@blox.capital?subject=Blox%20platform%20walkthrough%20request"
-                className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-amber-300 via-amber-200 to-sky-200 px-6 py-3 text-base font-semibold text-slate-950 shadow-lg shadow-amber-200/40 transition hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200"
+                className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-amber-400 via-amber-200 to-sky-200 px-6 py-3 text-base font-semibold text-slate-950 drop-shadow-[0_1px_0_rgba(255,255,255,0.45)] shadow-lg shadow-amber-200/40 transition hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200"
               >
                 Request the platform walkthrough
               </Link>
