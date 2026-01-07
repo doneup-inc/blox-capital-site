@@ -13,10 +13,11 @@ export interface UpdateEntry {
   detail: string;
 }
 
-const REPO_ROOT = path.resolve(process.cwd(), "..");
+const PROJECT_ROOT = process.cwd();
 const GROUNDWORK_FILE = path.join(
-  REPO_ROOT,
-  "investor_messaging",
+  PROJECT_ROOT,
+  "src",
+  "data",
   "pre_application_groundwork.md",
 );
 
