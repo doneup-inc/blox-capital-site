@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Blox Capital Site
 
-## Getting Started
+Next.js 16 + React 19 marketing property for Blox Capital, the regulated operator of Blox Pay and Blox Wallet. The site mirrors the MU1 groundwork tracked in `/investor_messaging` (licensing plan, policy stack, timelines) and provides structured CTAs for investors, partners, and regulators.
 
-First, run the development server:
+### Structure
+
+- `src/content/site.ts` — single source for hero copy, licensing grid, policy stack, investor metrics, and contact metadata.
+- `src/app/_components/` — composable section components (Hero, PlatformOverview, ComplianceStack, etc.).
+- `src/app/api/contact/route.ts` — lightweight route handler that receives contact form submissions (wire up to email/SaaS provider in production).
+- `public/assets` — static imagery (logos, wordmarks, etc.).
+- `src/lib/mu-data.ts` — pulls licensing timelines and update blurbs directly from `investor_messaging/pre_application_groundwork.md`; deploy the site from the monorepo root so those files exist at runtime.
+
+### Developing
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app runs at `http://localhost:3000`. Content edits generally happen inside `src/content/site.ts`; layout updates live with the components.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` with:
 
-## Learn More
+```
+RESEND_API_KEY=your_resend_key
+CONTACT_FORWARD_TO=greg@blox.capital,compliance@blox.capital
+```
 
-To learn more about Next.js, take a look at the following resources:
+`CONTACT_FORWARD_TO` accepts a comma-delimited list; defaults to `compliance@blox.capital` if omitted.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Contact Form Delivery
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`POST /api/contact` uses [Resend](https://resend.com) for transactional email. Swap the implementation if your stack prefers SES/Postmark/etc.
 
-## Deploy on Vercel
+### Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project assumes Vercel or another Node-compatible platform. Set `NODE_ENV=production` and run `pnpm build && pnpm start`. Add environment variables once the contact endpoint integrates with a provider.
