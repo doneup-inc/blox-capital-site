@@ -89,7 +89,7 @@ export const roadmap = [
   {
     period: "Active",
     title: "Angel financing",
-    detail: "Funds Trail of Bits audit kickoff, sponsor-bank execution, and NY/CA/MS filings via MU1.",
+    detail: "Funds Trail of Bits audit kickoff, sponsor-bank execution, and NY/CA/MI filings via MU1.",
   },
   {
     period: "Post-raise",
@@ -99,7 +99,7 @@ export const roadmap = [
   {
     period: "Forward",
     title: "Licensing expansion",
-    detail: "NJ/IL/TX/WS/TN follow NY issuance; NV/OK/FL/AB file once Tier-1 states progress.",
+    detail: "NJ/IL/TX/WA/TN follow NY issuance; NV/OK/FL/DC file once Tier-1 states progress.",
   },
 ];
 
