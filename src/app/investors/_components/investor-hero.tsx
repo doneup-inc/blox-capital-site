@@ -1,19 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
-import { hero as heroContent } from "@/content/site";
+import { investorHero } from "@/content/site";
 
-export function Hero() {
+export function InvestorHero() {
   return (
     <section id="overview" className="section-container hero-shell grid gap-12 rounded-[32px] border border-white/10 bg-white/5/80 p-10 md:grid-cols-[1.15fr_0.85fr] md:items-center">
       <div className="space-y-8">
         <span className="badge badge--secondary">
           <span className="accent-dot accent-dot--secondary" aria-hidden />
-          Now onboarding merchants
+          Commerce infrastructure • diligence-ready
         </span>
-        <h1 className="hero-heading">{heroContent.title}</h1>
-        <p className="tagline">{heroContent.subtitle}</p>
+        <h1 className="hero-heading">{investorHero.title}</h1>
+        <p className="tagline">{investorHero.subtitle}</p>
         <div className="flex flex-wrap gap-2 text-sm text-slate-100/80">
-          {heroContent.highlights.map((item) => (
+          {investorHero.highlights.map((item) => (
             <span key={item} className="highlight-pill">
               <span className="accent-dot accent-dot--secondary" aria-hidden />
               {item}
@@ -21,16 +21,17 @@ export function Hero() {
           ))}
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Link href={heroContent.primaryCta.href} className="cta-primary">
-            {heroContent.primaryCta.label}
+          <Link href={investorHero.primaryCta.href} className="cta-primary">
+            {investorHero.primaryCta.label}
           </Link>
-          <Link href={heroContent.secondaryCta.href} className="cta-secondary">
-            {heroContent.secondaryCta.label}
+          <Link href={investorHero.secondaryCta.href} className="cta-secondary">
+            {investorHero.secondaryCta.label}
           </Link>
         </div>
       </div>
       <div className="space-y-5">
         <div className="glass-panel rounded-3xl border border-white/10 p-6 text-center">
+          <p className="mono-label mb-2">Blox Capital</p>
           <Image
             src="/assets/blox-capital-wordmark.png"
             width={320}
@@ -40,11 +41,11 @@ export function Hero() {
             priority
           />
           <p className="mt-4 text-sm text-slate-200/85">
-            Payment processing that keeps your revenue where it belongs — in your account.
+            Regulated subsidiary of DoneUp, Inc. operating Blox Pay and Blox Wallet on the Omne commerce blockchain.
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
-          {heroContent.metrics.map((metric) => (
+          {investorHero.metrics.map((metric) => (
             <div key={metric.label} className="metric-card">
               <p className="mono-label text-[0.65rem] text-slate-300/80">{metric.label}</p>
               <p className="text-3xl font-semibold tracking-tight text-white">{metric.value}</p>

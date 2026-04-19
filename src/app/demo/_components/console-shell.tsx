@@ -26,15 +26,15 @@ export function ConsoleShell({ children }: PropsWithChildren) {
   return (
     <div className="demo-surface">
       <div className="demo-watermark">
-        <span>Private walkthrough</span>
+        <span>Live demo</span>
       </div>
       <div className="layout-shell">
         <aside className="nav-shell">
           <div>
-            <p className="badge badge-secondary">Sandbox demo</p>
+            <p className="badge badge-secondary">Interactive demo</p>
             <h1>Blox Pay Console</h1>
             <p className="mt-3 text-sm text-slate-300/80">
-              Private walkthrough for diligence partners. Powered by Omne settlement.
+              This is what your merchant dashboard looks like. Real-time payments, instant settlement, same-day payouts.
             </p>
             <div className="mt-6">
               <label
@@ -78,12 +78,12 @@ export function ConsoleShell({ children }: PropsWithChildren) {
             })}
           </nav>
           <div className="text-xs text-slate-400">
-            <p>Need production access?</p>
+            <p>Want this for your business?</p>
             <a
               className="underline-offset-4 hover:underline"
-              href="mailto:partnerships@blox.capital?subject=Blox%20Pay%20pilot%20coordination"
+              href="mailto:greg@blox.capital?subject=I%20want%20to%20try%20Blox%20Pay"
             >
-              partnerships@blox.capital
+              greg@blox.capital
             </a>
           </div>
         </aside>

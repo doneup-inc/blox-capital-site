@@ -1,13 +1,205 @@
+/* ─────────────────────────────────────────────────────────
+ * SITE CONTENT — Merchant-first homepage + investor route
+ * ───────────────────────────────────────────────────────── */
+
+// ── Navigation ─────────────────────────────────────────
+
 export const navSections = [
-  { label: "Overview", href: "#overview" },
-  { label: "Platform", href: "#platform" },
-  { label: "Compliance", href: "#compliance" },
-  { label: "Investors", href: "#investors" },
-  { label: "Updates", href: "#updates" },
+  { label: "How it works", href: "#how-it-works" },
+  { label: "The math", href: "#the-math" },
+  { label: "What's live", href: "#whats-live" },
+  { label: "Demo", href: "/demo" },
   { label: "Contact", href: "#contact" },
 ];
 
+export const investorNavSections = [
+  { label: "Overview", href: "/investors#overview" },
+  { label: "Platform", href: "/investors#platform" },
+  { label: "Compliance", href: "/investors#compliance" },
+  { label: "Investors", href: "/investors#investors" },
+  { label: "Updates", href: "/investors#updates" },
+  { label: "Contact", href: "/investors#contact" },
+];
+
+// ── Merchant-facing hero ───────────────────────────────
+
 export const hero = {
+  title: "Stop losing money on every sale.",
+  subtitle:
+    "Card processors take 2.9% + $0.30 from every transaction. On small tickets, that's up to 10% of your revenue — gone. Blox Pay settles payments in seconds with zero processing fees, and you get your money the same day.",
+  highlights: [
+    "No card fees",
+    "3-second settlement",
+    "Same-day payouts",
+  ],
+  primaryCta: {
+    label: "See the demo",
+    href: "/demo",
+  },
+  secondaryCta: {
+    label: "Talk to us",
+    href: "mailto:greg@blox.capital?subject=Interested%20in%20Blox%20Pay",
+  },
+  metrics: [
+    {
+      label: "Your cut on a $20 sale",
+      value: "$20.00",
+      detail: "You keep the full amount. Zero processing fees.",
+    },
+    {
+      label: "Settlement",
+      value: "3 sec",
+      detail: "Confirmed and final. Not pending. Not T+2.",
+    },
+    {
+      label: "Payout to your bank",
+      value: "Same day",
+      detail: "Withdraw anytime via Stripe Connect.",
+    },
+  ],
+};
+
+// ── How it works (3-step flow) ─────────────────────────
+
+export const howItWorks = {
+  eyebrow: "How it works",
+  title: "Three steps. No POS hardware. No app required.",
+  steps: [
+    {
+      number: "01",
+      title: "Create a payment link",
+      body: "Enter an amount and description. Get a shareable URL instantly — paste it in a DM, add it to your bio, text it to a customer.",
+    },
+    {
+      number: "02",
+      title: "Customer pays",
+      body: "They open the link, see the total, and pay. Card, Apple Pay, Google Pay — whatever they have. No app download, no account creation.",
+    },
+    {
+      number: "03",
+      title: "You get paid",
+      body: "Payment settles in 3 seconds. You see it in your dashboard immediately. Withdraw to your bank whenever you want.",
+    },
+  ],
+};
+
+// ── Fee comparison math ────────────────────────────────
+
+export const feeMath = {
+  eyebrow: "The math",
+  title: "Here's what card fees actually cost you.",
+  subtitle: "On small tickets, the percentage doesn't tell the whole story. The $0.30 per-transaction fee is what kills you.",
+  comparisons: [
+    {
+      item: "Coffee",
+      price: 4.50,
+      cardFee: 0.43,
+      cardPercent: "9.6%",
+      bloxFee: 0,
+    },
+    {
+      item: "Lunch plate",
+      price: 12.00,
+      cardFee: 0.65,
+      cardPercent: "5.4%",
+      bloxFee: 0,
+    },
+    {
+      item: "Haircut",
+      price: 35.00,
+      cardFee: 1.32,
+      cardPercent: "3.8%",
+      bloxFee: 0,
+    },
+    {
+      item: "Online order",
+      price: 68.00,
+      cardFee: 2.27,
+      cardPercent: "3.3%",
+      bloxFee: 0,
+    },
+  ],
+  footnote: "Card fees calculated at 2.9% + $0.30 (standard Stripe/Square rate). Blox Pay processing fee: $0.00.",
+  annualSavings: {
+    label: "If you process $10K/month in small tickets",
+    cardCost: "$3,900/year in fees",
+    bloxCost: "$0",
+    savings: "$3,900 back in your pocket",
+  },
+};
+
+// ── What's live (proof it's real) ──────────────────────
+
+export const whatsLive = {
+  eyebrow: "What's live right now",
+  title: "This isn't a pitch deck. It's running code.",
+  subtitle: "Built from scratch — blockchain, backend, SDK, explorer. All live on devnet.",
+  items: [
+    {
+      title: "Omne blockchain",
+      detail: "Custom Layer 1 producing blocks every 3 seconds. Live on devnet with 5 validator nodes.",
+      link: { label: "Block explorer →", href: "https://omnescan.com" },
+    },
+    {
+      title: "13 backend API modules",
+      detail: "Auth, orders, custody, compliance, Stripe Connect, payouts, webhooks — all wired and tested.",
+    },
+    {
+      title: "@omne/sdk on npm",
+      detail: "Published TypeScript SDK with bech32m address encoding and ed25519 signing. Install it right now.",
+      link: { label: "npm →", href: "https://www.npmjs.com/package/@omne/sdk" },
+    },
+    {
+      title: "Merchant dashboard",
+      detail: "See transactions, manage payment links, withdraw to your bank. Interactive demo available.",
+      link: { label: "Try the demo →", href: "/demo" },
+    },
+    {
+      title: "Phaylos wallet",
+      detail: "Customer wallet for sending and receiving payments on the Omne network.",
+      link: { label: "phaylos.xyz →", href: "https://phaylos.xyz" },
+    },
+    {
+      title: "FinCEN MSB registered",
+      detail: "Active Money Services Business registration. AML/BSA program in place. State licensing in progress.",
+    },
+  ],
+};
+
+// ── Contact (merchant-facing) ──────────────────────────
+
+export const contactSection = {
+  eyebrow: "Get started",
+  title: "Want to try it?",
+  subtitle: "We're onboarding our first merchants now. If you sell online and you're tired of card fees, let's talk.",
+  channels: [
+    {
+      label: "Merchants",
+      email: "greg@blox.capital",
+      description: "Want to accept payments with Blox Pay? Email Greg directly.",
+    },
+    {
+      label: "Builders",
+      email: "greg@blox.capital",
+      description: "Interested in joining early? We're looking for a merchant acquisition lead.",
+    },
+  ],
+};
+
+// ── Contact form topics ────────────────────────────────
+
+export const contactTopics = [
+  { label: "I want to accept payments", value: "merchant" },
+  { label: "I want to join the team", value: "team" },
+  { label: "I'm an investor", value: "investment" },
+  { label: "Something else", value: "other" },
+];
+
+// ═══════════════════════════════════════════════════════
+// INVESTOR PAGE CONTENT (preserved from original site)
+// ═══════════════════════════════════════════════════════
+
+export const investorHero = {
   title: "Commerce rails that clear the second customers tap",
   subtitle:
     "Blox Capital operates Blox Pay and Blox Wallet on Omne's audited settlement layer. Merchants keep the full checkout value, shoppers consent once, and licensing prep is already underway.",
@@ -71,7 +263,7 @@ export const platformStory = {
     },
     {
       title: "Pilot-ready stack",
-      copy: "Wallets, SDKs, console, and partner integrations are staged for the NYC pilot cohort post-raise.",
+      copy: "Wallets, SDKs, console, and partner integrations are staged for the pilot cohort post-raise.",
     },
     {
       title: "Treasury share model",
@@ -84,7 +276,7 @@ export const roadmap = [
   {
     period: "Current",
     title: "Protocol + tooling",
-    detail: "Omne mainnet, Beacon wallets, TypeScript SDK, and partner dashboards complete with monitoring hooks.",
+    detail: "Omne devnet, Phaylos wallets, TypeScript SDK, and partner dashboards complete with monitoring hooks.",
   },
   {
     period: "Active",
@@ -183,23 +375,23 @@ export const investorHighlights = {
 
 export const updateFeed = [
   {
+    date: "Apr 2026",
+    title: "@omne/sdk v1.0.0 published to npm",
+    detail: "TypeScript SDK with bech32m address encoding, ed25519 signing, and full test coverage shipped to npm.",
+  },
+  {
+    date: "Apr 2026",
+    title: "om1z address migration complete",
+    detail: "Entire codebase migrated to om1z bech32m addresses. 514 Rust tests passing, zero legacy references.",
+  },
+  {
     date: "Jan 2026",
     title: "MU1 groundwork pushed to source control",
     detail: "Michigan, New York, and California annex drafts committed with citations for each statutory requirement.",
   },
-  {
-    date: "Dec 2025",
-    title: "Sponsor bank diligence",
-    detail: "FBO controls walkthrough completed; treasury ladder approved pending capital plan close.",
-  },
-  {
-    date: "Nov 2025",
-    title: "Policy refresh",
-    detail: "AML/BSA, OFAC, incident response, and consumer disclosures updated for 2026 audit alignment.",
-  },
 ];
 
-export const contactChannels = [
+export const investorContactChannels = [
   {
     label: "Partnerships & Pilots",
     email: "partnerships@blox.capital",
@@ -217,7 +409,7 @@ export const contactChannels = [
   },
 ];
 
-export const contactTopics = [
+export const investorContactTopics = [
   { label: "Pilot / Merchant Integration", value: "pilot" },
   { label: "Investment / Financing", value: "investment" },
   { label: "Regulatory / Licensing", value: "regulatory" },

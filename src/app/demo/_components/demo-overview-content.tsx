@@ -17,9 +17,8 @@ export function DemoOverviewContent() {
           <p className="badge badge-secondary">{merchantProfile.environment}</p>
           <h2 className="mt-3 text-3xl font-semibold text-white">{merchantProfile.name}</h2>
           <p className="mt-2 max-w-2xl text-sm text-slate-300/80">
-            Monitoring Omne-powered checkouts for the {merchantProfile.name} cohort operating in {merchantProfile.vertical}.
-            Walkthrough showcases settlement speed, wallet health, and payout readiness with production-aligned
-            identifiers rendered statically for review.
+            See how Blox Pay handles payments for {merchantProfile.name} — real-time settlement,
+            wallet balances, and payout readiness. This is what you&apos;ll see when your customers pay.
           </p>
         </div>
         <div className="glass-panel rounded-2xl p-4 text-sm text-slate-200/80">

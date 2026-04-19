@@ -1,10 +1,10 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { investorContactChannels as contactChannels, investorContactTopics as contactTopics } from "@/content/site";
-import { SectionShell } from "./section-shell";
+import { investorContactChannels, investorContactTopics, dataRoomSteps } from "@/content/site";
+import { SectionShell } from "../../_components/section-shell";
 
-export function ContactHub() {
+export function InvestorContact() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -36,7 +36,7 @@ export function ContactHub() {
     >
       <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="space-y-4">
-          {contactChannels.map((channel) => (
+          {investorContactChannels.map((channel) => (
             <div key={channel.label} className="contact-card">
               <div>
                 <p className="text-base font-semibold text-white">{channel.label}</p>
@@ -69,7 +69,7 @@ export function ContactHub() {
                 <option value="" disabled>
                   Select a topic
                 </option>
-                {contactTopics.map((topic) => (
+                {investorContactTopics.map((topic) => (
                   <option key={topic.value} value={topic.value}>
                     {topic.label}
                   </option>
@@ -78,19 +78,22 @@ export function ContactHub() {
             </label>
             <label className="form-field col-span-2">
               <span>Message</span>
-              <textarea
-                name="message"
-                rows={4}
-                required
-                placeholder="Share context on pilots, diligence, or licensing conversations."
-              />
+              <textarea name="message" rows={4} placeholder="What's on your mind?" />
             </label>
           </div>
-          <button className="cta-primary w-full" disabled={status === "sending"}>
-            {status === "sending" ? "Sending..." : "Send request"}
+          <button
+            type="submit"
+            className="cta-primary mt-2 w-full text-center"
+            disabled={status === "sending"}
+          >
+            {status === "sending" ? "Sending…" : "Send message"}
           </button>
-          {status === "success" ? <p className="form-status success">Received. We will reply within one business day.</p> : null}
-          {status === "error" ? <p className="form-status error">Something went wrong. Please try again or email compliance@blox.capital.</p> : null}
+          {status === "success" && (
+            <p className="form-status success">Sent — we'll be in touch soon.</p>
+          )}
+          {status === "error" && (
+            <p className="form-status error">Something went wrong. Try greg@blox.capital directly.</p>
+          )}
         </form>
       </div>
     </SectionShell>

@@ -37,7 +37,6 @@ body {
   min-height: 100%;
 }
 
-  color: hsla(var(--accent-secondary), 0.95);
 body::after {
   content: "";
   position: fixed;
@@ -625,4 +624,185 @@ a {
 .hero-shell {
   box-shadow: var(--hero-shadow);
   transition: box-shadow 0.35s ease;
+}
+
+/* ── How it works step cards ────────────────────────── */
+
+.step-card {
+  background: var(--surface-alt);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+.step-card:hover {
+  transform: translateY(-0.35rem);
+  border-color: hsla(var(--accent-secondary), 0.45);
+  background: linear-gradient(145deg, rgba(15, 26, 45, 0.92), rgba(5, 10, 20, 0.92));
+  box-shadow: 0 38px 90px -55px rgba(8, 14, 30, 0.85);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, hsla(var(--accent-primary), 0.2), hsla(var(--accent-secondary), 0.15));
+  border: 1px solid hsla(var(--accent-secondary), 0.4);
+  color: hsl(var(--accent-secondary));
+}
+
+/* ── Fee savings table ──────────────────────────────── */
+
+.fee-table-header,
+.fee-table-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 0.8fr 1fr;
+  gap: 0;
+}
+
+.fee-table-header {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fee-table-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.fee-table-row:last-child {
+  border-bottom: none;
+}
+
+.fee-table-cell {
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  color: rgba(226, 234, 250, 0.85);
+}
+
+.fee-table-header .fee-table-cell {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.7);
+  padding: 0.75rem 1.25rem;
+}
+
+.fee-table-cell--label {
+  font-weight: 600;
+  color: #f5f7fb;
+}
+
+.fee-table-cell--bad {
+  color: #f87171;
+}
+
+.fee-table-cell--good {
+  color: #34d399;
+  font-weight: 600;
+}
+
+.fee-table-header .fee-table-cell--bad {
+  color: rgba(248, 113, 113, 0.6);
+}
+
+.fee-table-header .fee-table-cell--good {
+  color: rgba(52, 211, 153, 0.6);
+}
+
+/* ── Savings callout ────────────────────────────────── */
+
+.savings-callout {
+  background: var(--surface-alt);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+
+.savings-stat {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.savings-stat--highlight {
+  background: linear-gradient(135deg, hsla(var(--accent-secondary), 0.12), hsla(var(--accent-primary), 0.08));
+  border: 1px solid hsla(var(--accent-secondary), 0.3);
+}
+
+/* ── What's live cards ──────────────────────────────── */
+
+.live-card {
+  background: var(--surface-alt);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+.live-card:hover {
+  transform: translateY(-0.35rem);
+  border-color: hsla(var(--accent-secondary), 0.45);
+  background: linear-gradient(145deg, rgba(15, 26, 45, 0.92), rgba(5, 10, 20, 0.92));
+  box-shadow: 0 38px 90px -55px rgba(8, 14, 30, 0.85);
+}
+
+.live-dot {
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 0.45rem;
+  border-radius: 999px;
+  background: #34d399;
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.5);
+}
+
+/* ── Responsive fee table ───────────────────────────── */
+
+@media (max-width: 640px) {
+  .fee-table-header,
+  .fee-table-row {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .fee-table-cell:nth-child(4) {
+    display: none;
+  }
+
+  .fee-table-cell:nth-child(5) {
+    display: none;
+  }
+
+  .fee-table-header .fee-table-cell:nth-child(3)::after {
+    content: " / Blox";
+  }
+
+  .fee-table-row .fee-table-cell:nth-child(3)::after {
+    content: " → $0";
+    color: #34d399;
+    font-weight: 600;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-card,
+  .live-card {
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .step-card:hover,
+  .live-card:hover {
+    transform: none;
+  }
 }

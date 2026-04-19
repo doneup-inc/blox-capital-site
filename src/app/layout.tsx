@@ -16,9 +16,9 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://blox.capital"),
-  title: "Blox Capital — Regulated Commerce Infrastructure",
+  title: "Blox Pay — Stop Losing Money on Every Sale",
   description:
-    "Blox Capital LLC, a DoneUp, Inc. company, operates the Blox Pay and Blox Wallet platforms with institutional-grade compliance and Omne-powered settlement.",
+    "Payment processing with zero card fees. 3-second settlement. Same-day payouts to your bank. Built on the Omne blockchain.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     other: [{ rel: "mask-icon", url: "/favicon-512.png" }],
   },
   openGraph: {
-    title: "Blox Capital — Regulated Commerce Infrastructure",
+    title: "Blox Pay — Stop Losing Money on Every Sale",
     description:
-      "Regulated subsidiary delivering Omne-powered payments through Blox Pay and Blox Wallet.",
+      "Payment processing with zero card fees. 3-second settlement. Same-day payouts. Built for small merchants.",
     url: "https://blox.capital",
     siteName: "Blox Capital",
     locale: "en_US",
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blox Capital — Regulated Commerce Infrastructure",
+    title: "Blox Pay — Zero-Fee Payment Processing",
     description:
-      "Blox Capital LLC, the regulated operator of Blox Pay and Blox Wallet.",
+      "Card fees eat up to 10% of small-ticket sales. Blox Pay eliminates them. 3-second settlement, same-day payouts.",
   },
 };
 
