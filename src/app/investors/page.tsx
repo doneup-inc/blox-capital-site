@@ -1,29 +1,49 @@
 import Image from "next/image";
 import Link from "next/link";
-import { navSections } from "@/content/site";
-import { Hero } from "./_components/hero";
-import { HowItWorks } from "./_components/how-it-works";
-import { FeeSavings } from "./_components/fee-savings";
-import { WhatsLive } from "./_components/whats-live";
-import { MerchantContact } from "./_components/merchant-contact";
+import {
+  investorHero,
+  investorNavSections,
+  investorContactChannels,
+  investorContactTopics,
+  dataRoomSteps,
+} from "@/content/site";
+import { PlatformOverview } from "../_components/platform-overview";
+import { RoadmapTimeline } from "../_components/roadmap-timeline";
+import { ComplianceStack } from "../_components/compliance-stack";
+import { InvestorPanel } from "../_components/investor-panel";
+import { UpdateFeed } from "../_components/update-feed";
+import { InvestorContact } from "./_components/investor-contact";
+import { InvestorHero } from "./_components/investor-hero";
+import { getLicensingEntries, getGroundworkUpdates } from "@/lib/mu-data";
 
-export default function Home() {
+export const metadata = {
+  title: "Blox Capital — Investor & Compliance Portal",
+  description:
+    "Regulated commerce infrastructure. Compliance dossiers, licensing status, and investor materials for Blox Capital.",
+};
+
+export default function InvestorsPage() {
+  const licensingItems = getLicensingEntries();
+  const updates = getGroundworkUpdates();
+
   return (
     <div className="relative overflow-hidden pb-24">
-      <SiteHeader />
+      <InvestorHeader />
       <main className="space-y-32 pt-16">
-        <Hero />
-        <HowItWorks />
-        <FeeSavings />
-        <WhatsLive />
-        <MerchantContact />
+        <InvestorHero />
+        <PlatformOverview />
+        <RoadmapTimeline />
+        <ComplianceStack licensingItems={licensingItems} />
+        <InvestorPanel />
+        <UpdateFeed entries={updates} />
+        <InvestorContact />
       </main>
-      <SiteFooter />
+      <InvestorFooter />
     </div>
   );
 }
 
-function SiteHeader() {
+function InvestorHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/5 bg-slate-950/90 backdrop-blur-2xl">
       <div className="section-container">
@@ -42,7 +62,7 @@ function SiteHeader() {
             </Link>
           </div>
           <nav className="hidden flex-1 items-center justify-center gap-6 text-sm font-medium text-slate-200 md:flex">
-            {navSections.map((item) => (
+            {investorNavSections.map((item) => (
               <Link key={item.href} href={item.href} className="transition-colors hover:text-white">
                 {item.label}
               </Link>
@@ -50,16 +70,16 @@ function SiteHeader() {
           </nav>
           <div className="hidden gap-3 sm:flex">
             <Link
-              href="/investors"
+              href="/"
               className="inline-flex items-center whitespace-nowrap text-sm text-slate-400 transition-colors hover:text-white"
             >
-              Investors
+              ← Merchant site
             </Link>
             <Link
-              href="/demo"
+              href="mailto:compliance@blox.capital?subject=Compliance%20dossier%20access"
               className="cta-secondary inline-flex items-center whitespace-nowrap"
             >
-              Try the demo
+              Request compliance access
             </Link>
           </div>
         </div>
@@ -68,30 +88,33 @@ function SiteHeader() {
   );
 }
 
-function SiteFooter() {
+function InvestorFooter() {
   return (
     <footer className="border-t border-white/5 bg-slate-950/90 py-10 text-sm text-slate-400">
       <div className="section-container flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.2em] text-slate-500">
           <span>Blox Capital</span>
           <span className="hidden h-1 w-1 rounded-full bg-slate-700 md:inline-block" aria-hidden />
-          <span>Zero-fee payment processing</span>
+          <span>Regulated commerce infrastructure</span>
         </div>
         <nav className="flex flex-wrap gap-4 text-xs text-slate-400">
-          {navSections.map((item) => (
+          <Link href="/" className="transition-opacity hover:opacity-80">
+            Merchant site
+          </Link>
+          <Link href="/demo" className="transition-opacity hover:opacity-80">
+            Demo
+          </Link>
+          {investorNavSections.map((item) => (
             <Link key={item.href} href={item.href} className="transition-opacity hover:opacity-80">
               {item.label}
             </Link>
           ))}
-          <Link href="/investors" className="transition-opacity hover:opacity-80">
-            Investors
-          </Link>
         </nav>
         <Link
-          href="mailto:greg@blox.capital?subject=Blox%20Pay%20inquiry"
+          href="mailto:greg@blox.capital?subject=Investor%20or%20partner%20intro"
           className="text-xs font-medium text-white underline decoration-white/30 decoration-2 underline-offset-4 transition-opacity hover:opacity-80"
         >
-          greg@blox.capital
+          Direct line: greg@blox.capital
         </Link>
       </div>
     </footer>
